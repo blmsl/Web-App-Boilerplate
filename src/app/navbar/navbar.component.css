@@ -1,0 +1,17 @@
+.top-bar {
+    background: #333740;
+}
+
+.top-bar-title {
+    font-family: 'sans';
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.nav-menu a {
+    color: #ffffff;
+}
+
+.nav-menu {
+    list-style: none;
+}
