@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from "app/auth/auth.service";
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
     selector: 'navi-bar',
@@ -9,11 +10,21 @@ import { AuthService } from "app/auth/auth.service";
 })
 
 export class NavComponent {
+    private routeChanged: boolean = false;
 
-    constructor( private authService: AuthService ) { }
+    constructor( private authService: AuthService, private router: Router ) { 
+        router.events.subscribe((val) => {
+        this.routeChanged = val instanceof NavigationEnd;
+        });
+    }
+
+    onRouteChange() {
+        console.log( this.routeChanged );
+    }
 
     onLogout() {
         this.authService.logout();
+        this.router.navigate(['login']);
     }
 
 }

@@ -14,7 +14,7 @@ import { NgForm } from "@angular/forms";
 export class LoginComponent implements OnInit {
 
 
-  constructor( public router: Router, private authService: AuthService ) {  }
+  constructor( private router: Router, private authService: AuthService ) {  }
 
   ngOnInit() { }
 

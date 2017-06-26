@@ -1,4 +1,4 @@
-
+import { AuthService } from "app/auth/auth.service";
 import { Injectable, OnInit } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
@@ -8,22 +8,17 @@ import 'rxjs/add/operator/map';
 
 export class DataService implements OnInit {
 
-    constructor( public http: Http ) { }
+    constructor( public http: Http, private auth: AuthService ) { }
 
     ngOnInit(): void { }
 
+    fetchData() {
+        if( this.auth.isAuthenticated() ) {
 
-    fetchData( email: string, password: string ) {
-        return this.http.get("https://blog-prototype-e9b02.firebaseio.com/.json").map(
-
-            ( response: Response ) => {
-                let obj = response.json();
-                
-                if( obj.admin.email !== email || obj.admin.password !== password ) {
-                    return false;
-                } else 
-                    return true;
-            }
-        )
+            return this.http.get("https://blog-prototype-e9b02.firebaseio.com/.json").map(
+                data => console.log( data )
+            )
+        } else 
+            return console.log( "Data service failed");
     }
 }

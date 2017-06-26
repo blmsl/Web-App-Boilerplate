@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "app/data.service";
+import { AuthService } from "app/auth/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin',
-  template: `
-  <h4>Admin Works!</h4>
-  `
+  templateUrl: 'admin.component.html'
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private dataService: DataService, private authService: AuthService, private router: Router
+  ) { }
 
   ngOnInit() {
+    this.dataService.fetchData();
+  }
+
+  logout() {
+      this.authService.logout();
+      this.router.navigate(['login']);
   }
 
 }
