@@ -17,6 +17,7 @@ import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { AddPostComponent } from './admin/add-post/add-post.component'
 
 import { DataService } from "app/data.service";
 import { AuthService } from "app/auth/auth.service";
@@ -33,7 +34,8 @@ import { AuthGuard } from "app/auth/auth-guard.service";
     BlogComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,

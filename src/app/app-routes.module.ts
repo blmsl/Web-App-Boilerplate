@@ -6,10 +6,12 @@ import { ContactComponent } from "app/contact/contact.component";
 import { LoginComponent } from "app/login/login.component";
 import { AdminComponent } from "app/admin/admin.component";
 import { AuthGuard } from "app/auth/auth-guard.service";
+import { AddPostComponent } from "app/admin/add-post/add-post.component";
 
 const appRoutes = [
   { path: "", redirectTo: "about", pathMatch: "full" },
-  { path: "admin", component: AdminComponent, canActivate: [ AuthGuard ]},
+  { path: "admin", component: AdminComponent, canActivate: [ AuthGuard ] },
+  { path: "admin/new", component: AddPostComponent, canActivate: [ AuthGuard ] },
   { path: "blog", component: BlogComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
