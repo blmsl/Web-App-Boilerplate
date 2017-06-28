@@ -1,10 +1,10 @@
-<div class="well" style="max-width:450px; min-width:285px; margin: auto">
+<div class="well">
     <div class="row">
         <div class="col-md-8">
             <h3>Login to your account</h3>
         </div>
     </div>
-
+    
     <div class="row">
         <form (ngSubmit)="login(f)" #f="ngForm" class="container-fluid">
             <div class="input-group signup">
@@ -12,11 +12,6 @@
                 <input class="form-control" type="text" placeholder="enter email address" id="email" 
                 [(ngModel)]="email" name="email" required #em="ngModel">         
             </div>
-            <!--display error when email input field is invalid-->
-            <!--<div class="alert alert-danger" [hidden]="em.valid || !em.touched">
-                Email is required
-            </div>-->
-
                 <br>
             <div class="input-group signup">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -24,16 +19,9 @@
                 [(ngModel)]="password" name="password" required #pwd="ngModel" minlength="1">
             </div>
                 <!--display error for invalid password-->
-            <!--<div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">
-                Password is required
-            </div>-->
-<!--
-            <ng-template [ngIf]="!authService.isAuthenticated() && f.submitted">
-                <div class="alert alert-danger">
-                    Error
-                </div>
-            </ng-template>-->
-
+            <div class="alert alert-danger" *ngIf="authService.loginError()">
+                {{ authService.errorMSG }}
+            </div>
                 <br>
             <button class="btn btn-info" type="submit" [disabled]="!f.valid">Submit</button>
         </form>

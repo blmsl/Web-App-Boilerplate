@@ -1,7 +1,13 @@
+nav {
+    box-shadow: 0 4px 8px grey;
+}
 .top-bar {
     background: #333740;
 }
-
+.navbar-brand {
+    font-family: 'Lobster Two', cursive;
+    margin-right: 25px;
+}
 .top-bar-title {
     font-family: 'sans';
     font-size: 22px;

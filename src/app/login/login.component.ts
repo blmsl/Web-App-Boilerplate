@@ -8,7 +8,14 @@ import { NgForm } from "@angular/forms";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styles: [`
+  .well {
+    max-width:450px; 
+    min-width:285px; 
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  `],
   providers: [ AuthService ]
 })
 export class LoginComponent implements OnInit {

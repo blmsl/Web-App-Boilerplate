@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { AuthService } from "app/auth/auth.service";
 import { Router, NavigationEnd } from "@angular/router";
 
@@ -10,16 +10,22 @@ import { Router, NavigationEnd } from "@angular/router";
 })
 
 export class NavComponent {
-    private routeChanged: boolean = false;
+    routeChanged: boolean = false;
+    lastRoute: string;
 
-    constructor( private authService: AuthService, private router: Router ) { 
-        router.events.subscribe((val) => {
-        this.routeChanged = val instanceof NavigationEnd;
-        });
+    constructor( private authService: AuthService, private router: Router ) {
+        router.events.subscribe(() => {
+            if( this.lastRoute !== router.url ) {
+                this.routeChanged = true;
+                this.lastRoute = router.url;
+            } else {
+                this.routeChanged = false; 
+            }
+        })
     }
 
     onRouteChange() {
-        console.log( this.routeChanged );
+        return this.routeChanged;
     }
 
     onLogout() {

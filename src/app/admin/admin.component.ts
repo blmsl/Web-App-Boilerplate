@@ -5,7 +5,15 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin',
-  templateUrl: 'admin.component.html'
+  templateUrl: 'admin.component.html',
+  styles: [`
+  .well {
+    max-width:450px; 
+    min-width:285px; 
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  `]
 })
 export class AdminComponent implements OnInit {
 

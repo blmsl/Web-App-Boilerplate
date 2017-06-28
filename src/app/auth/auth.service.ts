@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 
 export class AuthService {
     currentUser: firebase.User;
+    errorMSG: string = null;
 
     constructor( private afAuth: AngularFireAuth, private router: Router ) {
        afAuth.authState.subscribe( user => this.currentUser = user ) 
@@ -19,7 +20,10 @@ export class AuthService {
     signinUser( email: string, password: string ) {
         firebase.auth().signInWithEmailAndPassword( email, password )
             .then(() => this.router.navigate(['admin']))
-            .catch( error => console.log( error ))
+            .catch( error => {
+                console.log( error.message );
+                this.errorMSG = error.message;
+            });
     }
 
     logout() {
@@ -27,6 +31,10 @@ export class AuthService {
             .then( () => {
                 console.log( "User logged out!")
             })
+    }
+
+    loginError() {
+        return this.errorMSG !== null;
     }
 
     isAuthenticated() { 

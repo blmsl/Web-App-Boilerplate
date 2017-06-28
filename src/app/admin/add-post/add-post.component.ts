@@ -1,6 +1,9 @@
 import { Component } from "@angular/core";
 import { AuthService } from "app/auth/auth.service";
 import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
+import { Post } from "app/model/post.model";
+import { DataService } from "app/data.service";
 
 @Component({
     selector: 'add-post',
@@ -10,18 +13,18 @@ import { Router } from "@angular/router";
 })
 
 export class AddPostComponent {
-
+    currentURL: string;
+    postTitle: string;
+    postBody: string;
     imgTitle: string;
     imageSRC: string;
-    currentURL: string;
+    post: Post;
 
-    constructor( private router: Router ) {
-        console.log( router.url )
+    constructor( private router: Router, private dataService: DataService ) {
         this.currentURL = router.url;
     }
 
     fileLoad( $event: any ) {
-        console.log( $event );
 
         let myReader: FileReader = new FileReader();    
         let file: File =  $event.target.files[0];
@@ -32,6 +35,21 @@ export class AddPostComponent {
         myReader.onload = (e: any) => {
         this.imageSRC = e.target.result;
         }
+    }
+
+    onSubmit( form: NgForm ) {
+        this.postTitle = form.value.title;
+        this.postBody = form.value.body;
+
+        if( this.imageSRC === undefined ) this.imageSRC = null;
+
+        this.post = new Post(
+            this.postTitle,
+            this.postBody,
+            this.imageSRC
+        )
+
+        this.dataService.postData( this.post );
     }
 
 }
