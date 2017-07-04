@@ -1,10 +1,11 @@
-<div class="panel panel-info">
+<div class="panel panel-default">
   <div class="panel-heading">
     <div class="row">
       <div class="col-xs-12">
         <label>New Post</label>
-        <button *ngIf="currentURL !== '/admin/new'" 
-        class="btn btn-info pull-right" data-toggle="collapse" href="#collapse1">Edit</button>
+        <button *ngIf="currentURL !== '/admin/new'" (click)="toggle()" style="outline: none"
+        class="btn btn-default pull-right" data-toggle="collapse" href="#collapse1"><i style="padding: 3px" 
+        class="glyphicon" [ngClass]="{ 'glyphicon-triangle-bottom' : !isOpen, 'glyphicon-triangle-top' : isOpen }"></i></button>
       </div>
     </div>
   </div>
@@ -18,6 +19,11 @@
 
             <input type="title" class="form-control"
             [(ngModel)]="title" name="title" required #em="ngModel" minlength="1">
+
+            <label for="title">Subtitle</label>
+
+            <input type="title" class="form-control"
+            [(ngModel)]="subtitle" name="subtitle" required #st="ngModel" minlength="1" maxlength="160">
 
             <label for="title">Body</label>
             <textarea type="body" class="form-control"

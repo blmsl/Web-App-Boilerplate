@@ -13,8 +13,7 @@ export class AuthService {
 
     constructor( private afAuth: AngularFireAuth, private router: Router ) {
        afAuth.authState.subscribe( user => this.currentUser = user ) 
-       console.log( typeof this.currentUser );
-
+       //console.log( typeof this.currentUser );
     }
 
     signinUser( email: string, password: string ) {

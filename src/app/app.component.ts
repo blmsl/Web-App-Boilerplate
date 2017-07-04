@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "app/data.service";
 // import * as firebase from 'firebase';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  
+  constructor( private dataService: DataService ) { }
 
   ngOnInit() {
-
+    this.dataService.fetchData();
   }
 }

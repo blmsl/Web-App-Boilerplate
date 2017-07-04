@@ -15,15 +15,11 @@ import { Router } from "@angular/router";
   }
   `]
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
 
   constructor( 
     private dataService: DataService, private authService: AuthService, private router: Router
   ) { }
-
-  ngOnInit() {
-    this.dataService.fetchData();
-  }
 
   logout() {
       this.authService.logout();

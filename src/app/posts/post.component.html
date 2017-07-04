@@ -1,0 +1,17 @@
+<div class="media">
+  <div class="row">
+    <img class="media-object" [src]="data.img">
+  </div>
+  <div class="media-body">
+    <h2 class="media-heading">
+        {{ data.title }}
+    </h2>
+    <h3>
+        {{ data.subtitle }}
+    </h3>
+        {{ data.content }}
+    <div>
+        <like [totalLikes]="data.likes" [iLike]="data.iLike"></like>
+    </div>
+  </div>
+</div>  

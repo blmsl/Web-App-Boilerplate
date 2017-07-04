@@ -24,6 +24,11 @@ import { AuthService } from "app/auth/auth.service";
 import { environment } from "environments/environment";
 import { AuthGuard } from "app/auth/auth-guard.service";
 
+import { LikeComponent } from "app/posts/like.component";
+import { PostComponent } from "app/posts/post.component";
+import { PostsComponent } from "app/posts/posts.component";
+import { PostService } from "app/posts/post.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +40,10 @@ import { AuthGuard } from "app/auth/auth-guard.service";
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostsComponent,
+    PostComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,7 @@ import { AuthGuard } from "app/auth/auth-guard.service";
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [ DataService, AuthService, AuthGuard ],
+  providers: [ DataService, AuthService, AuthGuard, PostService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

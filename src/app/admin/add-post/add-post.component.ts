@@ -13,8 +13,10 @@ import { DataService } from "app/data.service";
 })
 
 export class AddPostComponent {
+    isOpen: boolean = true;
     currentURL: string;
     postTitle: string;
+    postSubTitle: string;
     postBody: string;
     imgTitle: string;
     imageSRC: string;
@@ -40,16 +42,24 @@ export class AddPostComponent {
     onSubmit( form: NgForm ) {
         this.postTitle = form.value.title;
         this.postBody = form.value.body;
+        this.postSubTitle = form.value.subtitle;
 
-        if( this.imageSRC === undefined ) this.imageSRC = null;
+        if( this.imageSRC === undefined ) this.imageSRC = "https://s3.amazonaws.com/freecodecamp/wide-social-banner.png";
 
         this.post = new Post(
             this.postTitle,
+            this.postSubTitle,
             this.postBody,
-            this.imageSRC
+            this.imgTitle,
+            this.imageSRC.substring(23)
         )
-
         this.dataService.postData( this.post );
+        this.dataService.fetchData();
+    }
+
+    toggle() {
+        return this.isOpen !== true ? 
+        this.isOpen = true : this.isOpen = false;
     }
 
 }
