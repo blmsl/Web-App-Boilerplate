@@ -1,12 +1,19 @@
 nav {
     box-shadow: 0 4px 8px grey;
 }
+.navbar-nav{
+    float:none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+}
 .banner {
     background: #222222;
     margin: 0 auto;
 }
 img{
-    height: 80px;
+    max-height: 80px;
+    min-height: 50px;
     display: block;
     margin: auto;
 }
