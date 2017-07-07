@@ -14,7 +14,7 @@ export class DataService {
     constructor( public router: Router, private auth: AuthService ) { }
 
     fetchData() {
-        if( this.auth.isAuthenticated() ) {
+        //if( this.auth.isAuthenticated() ) {
             this.postsArr = [];
             // Get a database reference to our posts
             let db = firebase.database();
@@ -33,9 +33,7 @@ export class DataService {
             }), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
             }
-        } else 
-            return console.log( "Data service failed");
-    }
+        } 
 
     postData( postData: any ) {
 

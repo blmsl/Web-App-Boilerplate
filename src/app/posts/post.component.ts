@@ -4,20 +4,7 @@ import { LikeComponent } from './like.component';
 @Component({
     selector: 'post',
     templateUrl: 'post.component.html',
-    styles: [`
-        .handle {
-            color: #ccc;
-        }
-        .media {
-            margin-bottom: 20px;
-        }
-        .media-object {
-            border-radius: 10px;
-            height: 80px;
-            max-width: 500px;
-            width: auto;
-        }
-    `],
+    styleUrls: [ 'post.component.css' ],
     providers: [ LikeComponent ]
 })
 export class PostComponent implements OnInit {

@@ -8,7 +8,7 @@ import { DataService } from "app/data.service";
     selector: 'app-posts',
     template: `
     <div class="container">
-        <div class="col-sm-8 col-xs-8 col-md-6 col-sm-offset-2 col-xs-offset-2 col-md-offset-3">
+        <div class="col-sm-8 col-xs-8 col-md-6 col-sm-offset-2 col-md-offset-3">
             <div *ngFor="let post of posts">
                 <post [data]="post"></post>
             </div>

@@ -1,11 +1,20 @@
 nav {
     box-shadow: 0 4px 8px grey;
 }
+.banner {
+    background: #222222;
+    margin: 0 auto;
+}
+img{
+    height: 80px;
+    display: block;
+    margin: auto;
+}
 .top-bar {
     background: #333740;
 }
 .navbar-brand {
-    font-family: 'Lobster Two', cursive;
+    font-family: Roboto, Helvetica, sans-serif;
     margin-right: 25px;
 }
 .top-bar-title {
