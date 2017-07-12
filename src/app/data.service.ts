@@ -3,6 +3,7 @@ import { Injectable, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import * as firebase from 'firebase';
 import { Post } from './model/post.model';
+//import { emailjs } from 'emailjs/email';
 import 'rxjs/add/operator/map';
 
 
@@ -56,5 +57,37 @@ export class DataService {
                 })
             .catch( error => alert(`failed to upload: ${error}`));
         }
+    }
+    sendEmail( firstname: string, phone: string, email: string, comment: string ) {
+        let commentBody = `email: ${ email }\nphone: ${ phone }\ncomments:\n ${ comment }`;
+
+        console.log( commentBody );
+
+
+        // emailjs.send("794740928368-h6l76boem9qe7i60kv0al0vqo6vfev1f.apps.googleusercontent.com", "template_mssg", 
+        // {"reply_to": email, "from_name": firstname, "to_name": "Nick", "message_html": commentBody})
+
+        // .then(  res => console.log( res ) );
+    
+
+        // let server = emailjs.server.connect({
+        //     user:	"username", 
+        //     password:"password", 
+        //     host:  "smtp.your-email.com", 
+        //     ssl:  true
+        // });
+
+        // let message	= {
+        //     text:	"i hope this works", 
+        //     from:	"you <username@your-email.com>", 
+        //     to:		"someone <someone@your-email.com>, another <another@your-email.com>",
+        //     cc:		"else <else@your-email.com>",
+        //     subject:	"testing emailjs",
+        //     attachment: 
+        //     [
+        //         {data:"<html>i <i>hope</i> this works!</html>", alternative:true},
+        //         {path:"path/to/file.zip", type:"application/zip", name:"renamed.zip"}
+        //     ]
+        // };
     }
 }

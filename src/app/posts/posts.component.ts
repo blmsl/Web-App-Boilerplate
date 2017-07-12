@@ -25,7 +25,7 @@ export class PostsComponent implements OnInit {
         dataService.fetchData();
         this.posts = dataService.postsArr;
 
-        console.log( this.posts );
+        //console.log( this.posts );
 
         // for ( let post of this.posts ) {
         //     console.log( "for" );

@@ -28,6 +28,7 @@ import { LikeComponent } from "app/posts/like.component";
 import { PostComponent } from "app/posts/post.component";
 import { PostsComponent } from "app/posts/posts.component";
 import { PostService } from "app/posts/post.service";
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PostService } from "app/posts/post.service";
     AddPostComponent,
     PostsComponent,
     PostComponent,
-    LikeComponent
+    LikeComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

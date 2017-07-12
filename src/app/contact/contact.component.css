@@ -2,7 +2,7 @@
     text-align: center;
     display: flex;
 }
-.form {
+form {
     width: 400px;
     margin-top: 35px;
     justify-content: center;
@@ -33,7 +33,12 @@ ul {
     border-style: none;
     box-shadow: 3px 3px 15px grey;
     min-height: 50px;
-    min-width: 200px;
+    width: 400px;
+    max-width: 400px;
     font-family: sans-serif;
+}
+.btn-success {
+    box-shadow: 3px 3px 15px grey;
     margin-bottom: 100px;
+    width: 100%;
 }

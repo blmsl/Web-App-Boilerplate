@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "app/data.service";
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor( private dataService: DataService ) { }
 
   ngOnInit() {
+  }
+
+  onSubmit($event) {
+    
+    let email = $event.value.email;
+    let phone = $event.value.phone;
+    let message = $event.value.message;
+    let firstName = $event.value.firstname;
+
+    console.log( $event.value );
+    
+    this.dataService.sendEmail( firstName, phone, email, message );
+
   }
 
 }

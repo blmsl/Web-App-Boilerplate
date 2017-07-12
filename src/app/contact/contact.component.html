@@ -1,21 +1,27 @@
 <div class="container">
 
-  <div class="form">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <h2>Get In Touch</h2>
     <ul class="" style="margin-left: 0">
       <li class="model">
-        <input class="form-control" placeholder="first name">
+        <input class="form-control" placeholder="first name" 
+        [(ngModel)]="firstname" name="firstname" required #first="ngModel">
       </li>
       <li class="model">
-        <input class="form-control" placeholder="email">
+        <input class="form-control" placeholder="email" 
+        [(ngModel)]="email" name="email" required #em="ngModel">
       </li>
       <li class="model">
-        <input class="form-control" placeholder="phone number">
+        <input class="form-control" placeholder="phone number" 
+        [(ngModel)]="phone" name="phone" required #ph="ngModel">
       </li>
       <li class="model">
-        <textarea class="form-control message" placeholder=" message" cols="24"></textarea>
+        <textarea class="form-control message" placeholder=" message" cols="24" 
+        [(ngModel)]="message" name="message" required #msg="ngModel"></textarea>
       </li>
     </ul>
-  </div>
+    <button class="btn btn-success"
+    type="submit" [disabled]="!f.valid">Send</button>
+  </form>
   
 </div>
