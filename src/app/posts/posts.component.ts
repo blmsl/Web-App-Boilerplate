@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { PostComponent } from './post.component'
-import { PostService } from './post.service'
 import { DataService } from "app/data.service";
 
 
@@ -16,7 +15,7 @@ import { DataService } from "app/data.service";
     </div>
     `,
     // directives: [ TweetComponent ],
-    providers: [ PostService, DataService ]
+    providers: [ DataService ]
 })
 export class PostsComponent implements OnInit {
     posts: any[];

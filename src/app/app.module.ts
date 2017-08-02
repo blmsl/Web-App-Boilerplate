@@ -1,16 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {ReactiveFormsModule} from "@angular/forms";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from "app/app-routes.module";
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule, MD_PLACEHOLDER_GLOBAL_OPTIONS, MdInputModule, MdCardModule, MdIconModule } 
+  from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from "./navbar/navbar.component";
 import { ErrorComponent } from './error/error.component';
-import { AlertModule } from 'ngx-bootstrap';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
@@ -21,14 +26,15 @@ import { AddPostComponent } from './admin/add-post/add-post.component'
 
 import { DataService } from "app/data.service";
 import { AuthService } from "app/auth/auth.service";
+
 import { environment } from "environments/environment";
 import { AuthGuard } from "app/auth/auth-guard.service";
 
 import { LikeComponent } from "app/posts/like.component";
 import { PostComponent } from "app/posts/post.component";
 import { PostsComponent } from "app/posts/posts.component";
-import { PostService } from "app/posts/post.service";
 import { PortfolioComponent } from './portfolio/portfolio.component';
+
 
 @NgModule({
   declarations: [
@@ -52,12 +58,19 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AlertModule.forRoot(),
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdInputModule,
+    MdCardModule,
+    MdIconModule
   ],
-  providers: [ DataService, AuthService, AuthGuard, PostService ],
+  providers: [ DataService, AuthService, AuthGuard,
+    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }} ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

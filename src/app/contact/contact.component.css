@@ -1,13 +1,21 @@
 .container {
+<<<<<<< HEAD
+=======
+    font-family: 'Rajdhani', sans-serif;
+    max-width: 300px;
+    min-width: 190px;
+>>>>>>> 7fcc3b2... Converted "contact.component" from template-driven to a model-driven form. Added angular/material styling and updated all outdated npm dependencies.
     text-align: center;
-    display: flex;
+    margin-bottom: 75px;
 }
 form {
-    width: 400px;
+    width: 100%;
     margin-top: 35px;
+    font-size: 1.8rem;
     justify-content: center;
     margin: auto;
 }
+<<<<<<< HEAD
 ul {
     list-style: none;
     padding-left: 0;
@@ -26,19 +34,15 @@ ul {
     box-shadow: 3px 3px 15px grey;
     min-width: 200px;
     font-family: sans-serif;
+=======
+md-input-container {
+    width: 95%;
+>>>>>>> 7fcc3b2... Converted "contact.component" from template-driven to a model-driven form. Added angular/material styling and updated all outdated npm dependencies.
 }
-.message {
+textarea {
     padding: 5px;
     outline: none;
-    border-style: none;
-    box-shadow: 3px 3px 15px grey;
     min-height: 50px;
-    width: 400px;
-    max-width: 400px;
+    max-width: 233px;
     font-family: sans-serif;
-}
-.btn-success {
-    box-shadow: 3px 3px 15px grey;
-    margin-bottom: 100px;
-    width: 100%;
 }
