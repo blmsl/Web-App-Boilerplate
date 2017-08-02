@@ -11,7 +11,5 @@ export class PostComponent implements OnInit {
     @Input() data;
     constructor( private likeComponent: LikeComponent ) { }
     
-    ngOnInit() {
-        //console.log( this.data  );
-    }
+    ngOnInit() { }
 }

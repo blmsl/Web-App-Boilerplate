@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <h2>Get In Touch</h2>
-    <ul class="" style="margin-left: 0">
-      <li class="model">
-        <input class="form-control" placeholder="first name" 
-        [(ngModel)]="firstname" name="firstname" required #first="ngModel">
-      </li>
-      <li class="model">
-        <input class="form-control" placeholder="email" 
-        [(ngModel)]="email" name="email" required #em="ngModel">
-      </li>
-      <li class="model">
-        <input class="form-control" placeholder="phone number" 
-        [(ngModel)]="phone" name="phone" required #ph="ngModel">
-      </li>
-      <li class="model">
-        <textarea class="form-control message" placeholder=" message" cols="24" 
-        [(ngModel)]="message" name="message" required #msg="ngModel"></textarea>
-      </li>
-    </ul>
-    <button class="btn btn-success"
-    type="submit" [disabled]="!f.valid">Send</button>
-  </form>
-  
-</div>
-=======
   <md-card class="container">
     <h2> Get In Touch </h2>
 
@@ -55,4 +26,3 @@
         <button type="submit" [disabled]="!form.valid" md-raised-button>Send</button>
     </form>
   </md-card>
->>>>>>> 7fcc3b2... Converted "contact.component" from template-driven to a model-driven form. Added angular/material styling and updated all outdated npm dependencies.

@@ -47,6 +47,7 @@ export class AddPostComponent {
         if( this.imageSRC === undefined ) this.imageSRC = "https://s3.amazonaws.com/freecodecamp/wide-social-banner.png";
 
         this.post = new Post(
+            
             this.postTitle,
             this.postSubTitle,
             this.postBody,

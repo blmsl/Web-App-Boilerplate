@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "app/data.service";
+import { emailjs } from "emailjs/email";
 // import * as firebase from 'firebase';
 
 @Component({

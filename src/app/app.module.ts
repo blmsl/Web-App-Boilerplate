@@ -10,12 +10,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule, MD_PLACEHOLDER_GLOBAL_OPTIONS, MdInputModule, MdCardModule, MdIconModule } 
-  from '@angular/material';
+import { MdButtonModule, MdCheckboxModule, MD_PLACEHOLDER_GLOBAL_OPTIONS, MdInputModule, MdCardModule, MdIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from "./navbar/navbar.component";
 import { ErrorComponent } from './error/error.component';
+// import { AlertModule } from 'ngx-bootstrap';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
@@ -59,6 +59,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HttpModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    // AlertModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
